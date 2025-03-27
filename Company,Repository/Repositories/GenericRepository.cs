@@ -18,17 +18,10 @@ namespace Company_Repository.Repositories
             _context = context;
         }
         public void Add(T entity)
-        {
-            _context.Set<T>().Add(entity);
-            _context.SaveChanges();
-        }
+            => _context.Set<T>().Add(entity);
 
         public void Delete(T entity)
-        {
-            _context.Set<T>().Remove(entity);
-
-            _context.SaveChanges();
-        }
+            => _context.Set<T>().Remove(entity);
 
         public IEnumerable<T> GetAll()
              => _context.Set<T>().ToList();
@@ -37,9 +30,6 @@ namespace Company_Repository.Repositories
         => _context.Set<T>().FirstOrDefault(x => x.Id == id);
 
         public void Update(T entity)
-        {
-            _context.Set<T>().Update(entity);
-            _context.SaveChanges();
-        }
+            => _context.Set<T>().Update(entity);
     }
 }

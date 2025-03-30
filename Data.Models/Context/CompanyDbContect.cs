@@ -1,4 +1,6 @@
 ﻿using Company.Data.Entites;
+using Company.Data.Entities;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -9,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Company.Data.Context
 {
-    public class CompanyDbContect:DbContext
+    public class CompanyDbContect:IdentityDbContext<ApplicationUser>
     {
         public CompanyDbContect(DbContextOptions<CompanyDbContect> options) : base(options)
         {
